@@ -1,8 +1,10 @@
 #pragma once
 #include<errno.h>
 #include<time.h>
-#include"netLib/base/Mutex.h"
-#include"netLib/base/noncopyable.h"
+#include "Mutex.h"
+#include "noncopyable.h"
+// #include"netLib/base/Mutex.h"
+// #include"netLib/base/noncopyable.h"
 #include<pthread.h>
 
 namespace netLib{
@@ -27,7 +29,7 @@ public:
 
     bool waitForSeconds(int seconds){
         struct timespec abstime;
-        clock_gettime(CLOCK_REALTIME,&abstime);
+        clock_gettime(CLOCK_REALTIME,&abstime);         //clock_gettime 可以得到纳秒级别的定时
         abstime.tv_sec += static_cast<time_t> (seconds);
         return ETIMEDOUT == pthread_cond_timedwait(&cond, mutex.get(), &abstime);
     }

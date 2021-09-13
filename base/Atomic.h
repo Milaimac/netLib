@@ -1,6 +1,7 @@
 #ifndef NETLIB_BASE_ATOMIC_H
 #define NETLIB_BASE_ATOMIC_H
-#include"netLib/base/noncopyable.h"
+#include "noncopyable.h"
+// #include"netLib/base/noncopyable.h"
 #include<stdint.h>
 namespace netLib{
 
