@@ -55,7 +55,7 @@ private:
     volatile T value_;
 };
 } // namespace detail
-
+// 实现了AtomicInt32, 和AtomicInt64（也就是原子操作的整数）
 typedef detail::AtomicIntegerT<int32_t> AtomicInt32;
 typedef detail::AtomicIntegerT<int64_t> AtomicINt64;
 }
