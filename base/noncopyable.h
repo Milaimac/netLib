@@ -1,5 +1,4 @@
-#ifndef NETLIB_BASE_NONCOPYABLE
-#define NETLIT_BASE_NONCOPYABLE
+#pragma once
 
 namespace netLib{
 class noncopyable{
@@ -12,5 +11,3 @@ protected:
 };
 
 }
-
-#endif
