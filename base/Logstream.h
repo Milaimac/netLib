@@ -25,7 +25,10 @@ public:
             cur_ += len;
         }
     }
-    int length(){
+
+    const char* data() const{return data_;}
+    // 函数后面+const表示数据成员不得被修改， 并且const的对象 只能调用const的成员函数
+    int length()const{
         return static_cast<int> (cur_ - data_);
     } 
 
@@ -123,8 +126,23 @@ private:
 
     Buffer buffer_;
 
-    static const int kMaxNumericSize = 32;
+    static const int kMaxNumericSize = 48;
 };
 
+class Fmt{
+public:
+    template<typename  T>
+    Fmt(const char* fmt, T value);
+    const char* data() const{return buf_;}
+    int length(){return length_;}
+private:
+    char buf_[32];
+    int length_;
+};
+
+inline LogStream& operator<<(LogStream& s, Fmt& fmt){
+    s.append(fmt.data(), fmt.length());
+    return s;
+}
 
 }
