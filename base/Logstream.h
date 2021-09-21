@@ -106,7 +106,7 @@ public:
     LogStream& operator<< (const std::string& v){
         buffer_.append(v.c_str(), v.size());
         return  *this;
-    }
+    }   
 
     void append(const char* data, int len){
         buffer_.append(data, len);
