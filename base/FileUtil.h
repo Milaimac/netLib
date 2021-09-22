@@ -11,7 +11,8 @@ public:
     ~AppendFile();
 
     void append(const char *logline, const size_t len);
-    //TODO off_t writtenBytes() const {return writtenByters_; }
+    // 由于需要记录使用了多少字节，以便实现文件回滚
+    off_t writtenBytes() const {return writtenBytes_; }
     void flush();
 private:
     size_t write(const char* logline, size_t len);
@@ -19,6 +20,6 @@ private:
     FILE *fp_;
 
     char buffer_[64 * 1024];
-    //TODO off_t writenBytes_;
+    off_t writtenBytes_;
 };
 }
