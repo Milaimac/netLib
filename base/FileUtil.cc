@@ -5,7 +5,10 @@
 
 using namespace netLib;
 
-AppendFile::AppendFile(std::string filename):fp_(fopen(filename.c_str(), "ae")){
+AppendFile::AppendFile(std::string filename):
+fp_(fopen(filename.c_str(), "ae")),
+writtenBytes_(0)
+{
     assert(fp_);
     ::setbuffer(fp_, buffer_, sizeof buffer_);
 }
@@ -28,6 +31,7 @@ void AppendFile::append(const char* logline, const  size_t len){
         }
         written += n;
     }
+    writtenBytes_ += written;
 }
 
 void AppendFile::flush(){
