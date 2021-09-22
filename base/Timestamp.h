@@ -27,7 +27,7 @@ public:
     std::string toString() const;
     std::string toFormattedString(bool showMicroSeconds = true) const;
 
-    bool valid() const {microSecondSinceEpoch_ > 0;}
+    bool valid() const { return microSecondSinceEpoch_ > 0;}
     // microsecond 微秒，10^（-6）秒
     int64_t microSecondsSinceEpoch(){return  microSecondSinceEpoch_;}
     time_t secondsSinceEpoch(){return static_cast<time_t>(microSecondSinceEpoch_/kMicroSecondsPerSecond);}    //typedef long time_t 
