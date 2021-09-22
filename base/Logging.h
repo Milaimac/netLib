@@ -92,5 +92,21 @@ inline Logger::LogLevel Logger::logLevel(){
 
 //TODO  
 
+
+#define LOG_TRACE if(netLib::Logger::logLevel() <= netLib::Logger::TRACE) \
+    netLib::Logger(__FILE__, __LINE__, netLib::Logger::TRACE, __func__).stream()
+#define LOG_DEBUG if(netLib::Logger::logLevel() <= netLib::Logger::DEBUG) \
+    netLib::Logger(__FILE__, __LINE__, netLib::Logger::DEBUG, __func__).stream()
+
+#define LOG_INFO if(netLib::Logger::logLevel() <= netLib::Logger::INFO) \
+    netLib::Logger(__FILE__, __LINE__, netLib::Logger::INFO).stream()
+
+#define LOG_WARN netLib::Logger(__FILE__, __LINE__, netLib::Logger::WARN).stream()
+#define LOG_ERROR netLib::Logger(__FILE__, __LINE__, netLib::Logger::ERROR).stream()
+#define LOG_FATAL  netLib::Logger(__FILE__,__LINE__, netLib::Logger::FATAL).stream()
+#define LOG_SYSERROR netLib::Logger(__FILE__, __LINE__, false).stream()
+#define LOG_SYSFATAL netLib::Logger(__FILE__, __LINE__, true).stream()
+
+const char* strerror_tl(int savedErrno);
 }
-#define LOG Logger(__FILE__, __LINE__).stream()
+
