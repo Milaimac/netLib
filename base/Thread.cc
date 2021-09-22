@@ -99,6 +99,9 @@ void Thread::setDefaultName(){
     }
 }
 
+// 这里应该就是latch的作用，start()内创建ThreadData
+// 而其中Thread也有latch_,初始化默认为1，如果创建pthread失败就会deleteThreaddata，否则执行lathc_.wait()
+// 等待latch_.countDown()， countDown会调用notifyAll()，唤醒阻塞线程，而latch_又是由startThread-->runThread()调用的
 void Thread::start(){
     assert(!started_);
     started_ = true;
@@ -109,9 +112,9 @@ void Thread::start(){
         started_ = false;
         delete(data);
         //TODO LOG_SYSFATAL << "Failed in pthread create"
-        //TODO 现在还做日志库出来
+        //TODO 现在还没有做日志库出来
     }
-    else{
+    else{// 创建成功， wait一下，直到真正实现到runThread的latch_.countDown()，这是就notifyAll，唤醒线程
         latch_.wait();
         assert(tid_ > 0);
     }
