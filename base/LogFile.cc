@@ -51,7 +51,7 @@ void LogFile::append_unlocked(const char* logline, int len){
     }
     else{// writtenBytes <=  rollSize 没有到达规定的文件大小，但是达到规定的时间， 这里规定的是24小时。 这样的话，下面的又乘又除倒是可以理解了
         ++count_;
-        if(count_ >= checkEveryN_){
+        if(count_ >= checkEveryN_){// 只不过这里的检查是根据checkEveryN的
             count_ = 0;
             time_t now = ::time(NULL);
             time_t thisPeriod_ = now / kRollPerSeconds_ * kRollPerSeconds_;
@@ -78,6 +78,7 @@ bool LogFile::rollFile(){
         file_.reset(new AppendFile(filename));
         return true;
     }
+    return false;
 }
 
 string LogFile::getLogFilename(const string& basename, time_t* now){
