@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-11-27 21:41:23
  * @LastEditors: kafier
- * @LastEditTime: 2021-11-27 21:41:23
+ * @LastEditTime: 2021-11-28 15:40:43
  */
 #pragma once
 #include <sys/epoll.h>
@@ -30,6 +30,7 @@ private:
     static const int MAXFDS = 100000;
     int epollFd_;
     std::vector<epoll_event> events_;
+    //这里使用的两个映射。 
     std::shared_ptr<Channel> fd2chan_[MAXFDS];
     std::shared_ptr<HttpData> fd2http_[MAXFDS];
     TimerManager timerManager_;

@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-11-27 21:41:47
  * @LastEditors: kafier
- * @LastEditTime: 2021-11-27 21:41:53
+ * @LastEditTime: 2021-11-28 16:53:11
  */
 #include "Epoll.h"
 
@@ -44,7 +44,7 @@ void Epoll::epoll_add(SP_Channel request, int timeout)
     struct epoll_event event;
     event.data.fd = fd;
     event.events = request->getEvents();
-
+    // 每次epoll_add 的时候都会把对应的Events给设置成lastEvnets
     request->EqualAndUpdateLastEvents();
 
     fd2chan_[fd] = request;
@@ -61,6 +61,8 @@ void Epoll::epoll_mod(SP_Channel request, int timeout)
     if (timeout > 0)
         add_timer(request, timeout);
     int fd = request->getFd();
+    // 如果是新的Events，那么就将对应的fd设置未不同的events
+    // 如果不是就不用执行了
     if (!request->EqualAndUpdateLastEvents())
     {
         struct epoll_event event;
