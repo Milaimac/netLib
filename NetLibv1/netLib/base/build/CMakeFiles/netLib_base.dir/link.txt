@@ -1,2 +1,0 @@
-/usr/bin/ar qc libnetLib_base.a  CMakeFiles/netLib_base.dir/AsyncLogging.cc.o CMakeFiles/netLib_base.dir/CountDownLatch.cc.o CMakeFiles/netLib_base.dir/CurrentThread.cc.o CMakeFiles/netLib_base.dir/Date.cc.o CMakeFiles/netLib_base.dir/FileUtil.cc.o CMakeFiles/netLib_base.dir/LogFile.cc.o CMakeFiles/netLib_base.dir/Logging.cc.o CMakeFiles/netLib_base.dir/Logstream.cc.o CMakeFiles/netLib_base.dir/ProcessInfo.cc.o CMakeFiles/netLib_base.dir/Timestamp.cc.o CMakeFiles/netLib_base.dir/Thread.cc.o CMakeFiles/netLib_base.dir/TimeZone.cc.o
-/usr/bin/ranlib libnetLib_base.a

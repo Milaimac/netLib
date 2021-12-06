@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/testAsyncLogging.dir/testAsyncLogging.cc.o  -o testAsyncLogging ../libnetLib_base.a -lpthread -lrt 
