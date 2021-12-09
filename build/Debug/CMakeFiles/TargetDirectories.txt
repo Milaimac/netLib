@@ -1,0 +1,6 @@
+/home/kafier/workspace/NetLib/build/Debug/CMakeFiles/rebuild_cache.dir
+/home/kafier/workspace/NetLib/build/Debug/CMakeFiles/WebServer.dir
+/home/kafier/workspace/NetLib/build/Debug/CMakeFiles/edit_cache.dir
+/home/kafier/workspace/NetLib/build/Debug/base/CMakeFiles/rebuild_cache.dir
+/home/kafier/workspace/NetLib/build/Debug/base/CMakeFiles/libserver_base.dir
+/home/kafier/workspace/NetLib/build/Debug/base/CMakeFiles/edit_cache.dir
