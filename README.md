@@ -1,3 +1,8 @@
+<!--
+ * @Date: 2021-12-07 11:48:30
+ * @LastEditors: kafier
+ * @LastEditTime: 2021-12-09 22:19:32
+-->
 # 一个高性能的C++网络库 NetLib
 
 ## 环境
@@ -21,3 +26,4 @@ NetLib是一个仿照muduo设计思想实现的一个网络库， 整体的项�
 
 使用webbench1.5给服务器做并发测试
 
+[异步日志库的功能和实现](https://github.com/Milaimac/netLib/blob/version1/conclusion/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E6%97%A5%E5%BF%97%E5%BA%93.md)
