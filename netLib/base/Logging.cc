@@ -18,6 +18,7 @@ static AsyncLogging *AsyncLogger_;
 
 std::string Logger::logFileName_ = "./WebServer.log";
 
+// 直接使用异步日志
 void once_init()
 {
     AsyncLogger_ = new AsyncLogging(Logger::getLogFileName());

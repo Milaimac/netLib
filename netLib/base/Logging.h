@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-11-27 21:31:13
  * @LastEditors: kafier
- * @LastEditTime: 2021-11-27 21:31:14
+ * @LastEditTime: 2021-12-09 14:45:25
  */
 #pragma once
 #include <pthread.h>
@@ -21,6 +21,7 @@ public:
 
     static void setLogFileName(std::string fileName) { logFileName_ = fileName; }
     static std::string getLogFileName() { return logFileName_; }
+
 
 private:
     class Impl
