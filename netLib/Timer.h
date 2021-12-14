@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-11-27 21:26:55
  * @LastEditors: kafier
- * @LastEditTime: 2021-11-27 21:26:57
+ * @LastEditTime: 2021-12-13 23:19:20
  */
 #pragma once
 #include <unistd.h>
@@ -33,6 +33,8 @@ class TimerNode { // 时间结点
   std::shared_ptr<HttpData> SPHttpData;
 };
 
+// 记住 priority_queue 的排序规则和sort的排序规则是相反的。所以这个是expirTime较小的会放在堆顶。 
+// 并且使用智能指针来管理每个时间节点。 
 struct TimerCmp {
   bool operator()(std::shared_ptr<TimerNode> &a,
                   std::shared_ptr<TimerNode> &b) const {
@@ -49,7 +51,7 @@ class TimerManager {
 
  private:
   typedef std::shared_ptr<TimerNode> SPTimerNode;
-  std::priority_queue<SPTimerNode, std::deque<SPTimerNode>, TimerCmp>
-      timerNodeQueue;
+  
+  std::priority_queue<SPTimerNode, std::deque<SPTimerNode>, TimerCmp> timerNodeQueue; // 使用deque 作为底层容器
   // MutexLock lock;
 };

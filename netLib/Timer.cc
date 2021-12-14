@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-11-27 21:27:11
  * @LastEditors: kafier
- * @LastEditTime: 2021-11-27 21:27:13
+ * @LastEditTime: 2021-12-13 23:36:59
  */
 #include "Timer.h"
 #include <sys/time.h>
@@ -34,7 +34,6 @@ void TimerNode::update(int timeout) {
 }
 
 // 通过isValid 判断这个时间节点是否已经过期， 如果过期给他设置deteted这个flag， 方便队列弹出
-// 但是要一直执行这个isValid吗
 bool TimerNode::isValid() {
   struct timeval now;
   gettimeofday(&now, NULL);
