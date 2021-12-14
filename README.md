@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-12-07 11:48:30
  * @LastEditors: kafier
- * @LastEditTime: 2021-12-09 22:22:18
+ * @LastEditTime: 2021-12-14 11:29:07
 -->
 # 一个高性能的C++网络库 NetLib
 
@@ -31,3 +31,5 @@ NetLib是一个仿照muduo设计思想实现的一个网络库， 整体的项�
 [异步日志库的功能和实现](https://github.com/Milaimac/netLib/blob/master/conclusion/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E6%97%A5%E5%BF%97%E5%BA%93.md)
 
 [定时器模块的设计逻辑](https://github.com/Milaimac/netLib/blob/master/conclusion/%E5%AE%9A%E6%97%B6%E5%99%A8.md)
+
+[IO模型]()
