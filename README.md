@@ -28,6 +28,6 @@ NetLib是一个仿照muduo设计思想实现的一个网络库， 整体的项�
 
 ## 项目核心模块
 
-[异步日志库的功能和实现](https://github.com/Milaimac/netLib/blob/version1/conclusion/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E6%97%A5%E5%BF%97%E5%BA%93.md)
+[异步日志库的功能和实现](https://github.com/Milaimac/netLib/blob/master/conclusion/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E6%97%A5%E5%BF%97%E5%BA%93.md)
 
 []
