@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-12-07 11:48:30
  * @LastEditors: kafier
- * @LastEditTime: 2021-12-14 16:11:40
+ * @LastEditTime: 2021-12-18 14:47:48
 -->
 # 一个高性能的C++网络库 NetLib
 
@@ -11,7 +11,7 @@ Ubuntu18.04
 g++ 7.5.0
 
 ## 项目介绍
-NetLib是一个仿照muduo设计思想实现的一个网络库， 整体的项目的IO模型是Reactor模型（non-blocking+IO multiplexing）。
+NetLib是一个仿照muduo设计思想实现的一个http服务器， 整体的项目的IO模型是Reactor模型（non-blocking+IO multiplexing）。
 
 ## 技术亮点
 
@@ -33,6 +33,11 @@ NetLib是一个仿照muduo设计思想实现的一个网络库， 整体的项�
 [定时器模块的设计逻辑](https://github.com/Milaimac/netLib/blob/master/conclusion/%E5%AE%9A%E6%97%B6%E5%99%A8.md)
 
 [IO模型]()
+
+## 未来改进方向
+
+- 将http服务器和网络库进行解耦， 让网络库能够适用于更多场景
+- 尝试加入协程库
 
 ## 网络库性能测试
 
